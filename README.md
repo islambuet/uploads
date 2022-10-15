@@ -1,1 +1,2 @@
-# uploads
+### New project
+    laravel new uploads

@@ -15,7 +15,7 @@ class UploadController extends Controller
         //check auth validation
 
         $upload_dir=$request->input('upload_dir','');
-        $max_size=$request->input('max_size',1024);
+        $max_size=$request->input('max_size',1024*3);
         if($request->input('type','image')=='file'){
             $upload_rules[]='mimes:png,jpg,jpeg,bmp,gif,doc,docx,xls,xlsx,pdf,csv,txt';
         }
@@ -27,7 +27,8 @@ class UploadController extends Controller
             return response()->json(['error' => '', 'uploaded_files' =>$uploadedFiles['uploaded_files']]);
         }
         else{
-            return response()->json(['error' => 'UPLOAD_FAILED', 'messages' =>$uploadedFiles['errors']]);
+            //No need to Format messages
+            return response()->json(['error' => 'VALIDATION_FAILED', 'messages' =>$uploadedFiles['errors']]);
         }
     }
 

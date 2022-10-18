@@ -15,6 +15,4 @@ use App\Http\Controllers as Controllers;
 |
 */
 Route::post('/upload', [Controllers\UploadController::class, 'saveFiles']);
-//Route::get('/linkstorage', function () {
-//     Artisan::call('storage:link');
-// });
+

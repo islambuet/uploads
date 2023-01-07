@@ -15,7 +15,7 @@ class UploadController extends Controller
         //check auth validation
 
         $upload_dir=$request->input('upload_dir','');
-        $max_size=$request->input('max_size',1024*3);
+        $max_size=$request->input('max_size',1024*9);
         if($request->input('type','image')=='file'){
             $upload_rules[]='mimes:png,jpg,jpeg,bmp,gif,doc,docx,xls,xlsx,pdf,csv,txt';
         }
